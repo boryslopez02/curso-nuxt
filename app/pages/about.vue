@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>About Us</h1>
+        <TitlePage title="About us" color="yellow"/>
     </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>blog parent</h1>
+        <TitlePage title="Blog" color="red"/>
         <NuxtPage/>
     </div>
 </template>

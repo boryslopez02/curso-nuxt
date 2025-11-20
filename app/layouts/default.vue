@@ -1,17 +1,14 @@
 <template>
     <div>
-        <NuxtLink to="/">Home</NuxtLink>
-        <NuxtLink to="/about">About</NuxtLink>
-        <NuxtLink to="/product">Product</NuxtLink>
+        <AppHeader/>
 
         <slot />
 
-        <footer>footer</footer>
+        <UiButton/>
+        <AppFooter/>
     </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+
 </script>

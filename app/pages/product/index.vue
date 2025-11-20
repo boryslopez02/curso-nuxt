@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>product directory</h1>
+        <TitlePage title="Product" color="green"/>
     </div>
 </template>
 

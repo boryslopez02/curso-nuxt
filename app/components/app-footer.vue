@@ -1,6 +1,6 @@
 <template>
     <div>
-        <TitlePage title="Home" color="blue" />
+        <footer>footer default</footer>
     </div>
 </template>
 
