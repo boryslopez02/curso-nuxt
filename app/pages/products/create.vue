@@ -7,32 +7,30 @@
     <div v-if="errorMessage">
       <p>Error creating product: {{ errorMessage }}</p>
     </div>
-    
   </div>
 </template>
 
 <script lang="ts" setup>
-    import type { NuxtError } from '#app';
-    const errorMessage = ref<string | null>(null);
+import type { FetchError } from "ofetch";
+// import type { NuxtError } from "#app";
 
-    const onSubmit = async (event: Event) => {
+const errorMessage = ref<string | null>(null);
 
-        try {
-            errorMessage.value = null;
+const onSubmit = async (event: Event) => {
+  try {
+    const response = await $fetch("/api/products", {
+      method: "POST",
+      body: {
+        name: "New Product",
+        price: 99.99,
+      },
+    });
 
-            const response = await $fetch('/api/products', {
-                method: 'POST',
-                body: {
-                    name: 'New Product',
-                    price: 99.99
-                }
-            });
-            
-            console.log('response: ', response);
-        } catch (error) {
-            const err = error as NuxtError;
-            console.log('err: ', err);
-            errorMessage.value = err.message;
-        }
-    };
+    console.log("response: ", response);
+  } catch (error) {
+    const fetchError = error as FetchError;
+    errorMessage.value =
+      fetchError.data?.message || "Ocurrió un error inesperado";
+  }
+};
 </script>
